@@ -1,0 +1,31 @@
+package controllers
+
+import (
+    "net/http"
+
+    "github.com/gin-gonic/gin"
+    "your-project/models"
+)
+
+type ThirdPartySiteController struct{}
+
+// GetAvailableSites 获取可用的第三方站点列表
+func (c *ThirdPartySiteController) GetAvailableSites(ctx *gin.Context) {
+    var thirdPartySiteModel models.ThirdPartySite
+    sites, err := thirdPartySiteModel.FindAvailableSites()
+    
+    if err != nil {
+        ctx.JSON(http.StatusInternalServerError, gin.H{
+            "status":  http.StatusInternalServerError,
+            "message": "获取站点列表失败",
+            "error":   err.Error(),
+        })
+        return
+    }
+    
+    ctx.JSON(http.StatusOK, gin.H{
+        "status":  http.StatusOK,
+        "message": "获取可用站点列表成功",
+        "data":    sites,
+    })
+}

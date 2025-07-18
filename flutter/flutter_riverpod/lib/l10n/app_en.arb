@@ -1,0 +1,373 @@
+{
+  "@@locale": "en",
+  
+  "appTitle": "AiYing Video",
+  "@appTitle": {
+    "description": "Application title"
+  },
+  
+  "homeTab": "Home",
+  "@homeTab": {
+    "description": "Bottom navigation bar home tab"
+  },
+  
+  "videoTab": "Videos",
+  "@videoTab": {
+    "description": "Bottom navigation bar videos tab"
+  },
+  
+  "shopTab": "Shop",
+  "@shopTab": {
+    "description": "Bottom navigation bar shop tab"
+  },
+  
+  "profileTab": "Profile",
+  "@profileTab": {
+    "description": "Bottom navigation bar profile tab"
+  },
+  
+  "searchHint": "Search for videos",
+  "@searchHint": {
+    "description": "Search box hint text"
+  },
+  
+  "login": "Login",
+  "@login": {
+    "description": "Login button text"
+  },
+  
+  "register": "Register",
+  "@register": {
+    "description": "Register button text"
+  },
+  
+  "username": "Username",
+  "@username": {
+    "description": "Username input field label"
+  },
+  
+  "password": "Password",
+  "@password": {
+    "description": "Password input field label"
+  },
+  
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Confirm password input field label"
+  },
+  
+  "forgotPassword": "Forgot Password",
+  "@forgotPassword": {
+    "description": "Forgot password link text"
+  },
+  
+  "loginSuccess": "Login Successful",
+  "@loginSuccess": {
+    "description": "Login success message"
+  },
+  
+  "loginFailed": "Login Failed",
+  "@loginFailed": {
+    "description": "Login failed message"
+  },
+  
+  "registerSuccess": "Registration Successful",
+  "@registerSuccess": {
+    "description": "Registration success message"
+  },
+  
+  "registerFailed": "Registration Failed",
+  "@registerFailed": {
+    "description": "Registration failed message"
+  },
+  
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout button text"
+  },
+  
+  "logoutConfirm": "Are you sure you want to logout?",
+  "@logoutConfirm": {
+    "description": "Logout confirmation message"
+  },
+  
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  
+  "confirm": "Confirm",
+  "@confirm": {
+    "description": "Confirm button text"
+  },
+  
+  "vipMember": "VIP Member",
+  "@vipMember": {
+    "description": "VIP member label"
+  },
+  
+  "openVip": "Subscribe",
+  "@openVip": {
+    "description": "Subscribe to VIP button text"
+  },
+  
+  "vipExpired": "Membership Expired",
+  "@vipExpired": {
+    "description": "Membership expired message"
+  },
+  
+  "vipExpireOn": "Expires on: {date}",
+  "@vipExpireOn": {
+    "description": "Membership expiry date message",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "2023-12-31"
+      }
+    }
+  },
+  
+  "goldCoin": "Gold Coins",
+  "@goldCoin": {
+    "description": "Gold coins label"
+  },
+  
+  "goldBalance": "Balance: {amount}",
+  "@goldBalance": {
+    "description": "Gold balance message",
+    "placeholders": {
+      "amount": {
+        "type": "int",
+        "example": "100"
+      }
+    }
+  },
+  
+  "buyGold": "Buy Coins",
+  "@buyGold": {
+    "description": "Buy coins button text"
+  },
+  
+  "taskCenter": "Task Center",
+  "@taskCenter": {
+    "description": "Task center label"
+  },
+  
+  "exchangeCenter": "Exchange Center",
+  "@exchangeCenter": {
+    "description": "Exchange center label"
+  },
+  
+  "transactionDetails": "Transactions",
+  "@transactionDetails": {
+    "description": "Transactions label"
+  },
+  
+  "viewingHistory": "Watch History",
+  "@viewingHistory": {
+    "description": "Watch history label"
+  },
+  
+  "noViewingHistory": "No watch history",
+  "@noViewingHistory": {
+    "description": "No watch history message"
+  },
+  
+  "more": "More",
+  "@more": {
+    "description": "More button text"
+  },
+  
+  "promotionUser": "Invite Friends",
+  "@promotionUser": {
+    "description": "Invite friends label"
+  },
+  
+  "registerSuccessful": "Successful Registration",
+  "@registerSuccessful": {
+    "description": "Successful registration label"
+  },
+  
+  "enjoyVipExperience": "Enjoy VIP Experience",
+  "@enjoyVipExperience": {
+    "description": "Enjoy VIP experience label"
+  },
+  
+  "addToCart": "Add to Cart",
+  "@addToCart": {
+    "description": "Add to cart button text"
+  },
+  
+  "buyNow": "Buy Now",
+  "@buyNow": {
+    "description": "Buy now button text"
+  },
+  
+  "addedToCart": "Added to Cart",
+  "@addedToCart": {
+    "description": "Added to cart message"
+  },
+  
+  "checkout": "Checkout",
+  "@checkout": {
+    "description": "Checkout button text"
+  },
+  
+  "totalAmount": "Total: ${amount}",
+  "@totalAmount": {
+    "description": "Total amount message",
+    "placeholders": {
+      "amount": {
+        "type": "String",
+        "example": "99.00"
+      }
+    }
+  },
+  
+  "pay": "Pay",
+  "@pay": {
+    "description": "Pay button text"
+  },
+  
+  "paymentMethod": "Payment Method",
+  "@paymentMethod": {
+    "description": "Payment method label"
+  },
+  
+  "wechatPay": "WeChat Pay",
+  "@wechatPay": {
+    "description": "WeChat Pay label"
+  },
+  
+  "aliPay": "Alipay",
+  "@aliPay": {
+    "description": "Alipay label"
+  },
+  
+  "applePay": "Apple Pay",
+  "@applePay": {
+    "description": "Apple Pay label"
+  },
+  
+  "googlePay": "Google Pay",
+  "@googlePay": {
+    "description": "Google Pay label"
+  },
+  
+  "orderSuccess": "Order Placed",
+  "@orderSuccess": {
+    "description": "Order success message"
+  },
+  
+  "orderFailed": "Order Failed",
+  "@orderFailed": {
+    "description": "Order failed message"
+  },
+  
+  "paySuccess": "Payment Successful",
+  "@paySuccess": {
+    "description": "Payment success message"
+  },
+  
+  "payFailed": "Payment Failed",
+  "@payFailed": {
+    "description": "Payment failed message"
+  },
+  
+  "networkError": "Network error, please check your connection",
+  "@networkError": {
+    "description": "Network error message"
+  },
+  
+  "retry": "Retry",
+  "@retry": {
+    "description": "Retry button text"
+  },
+  
+  "loading": "Loading...",
+  "@loading": {
+    "description": "Loading message"
+  },
+  
+  "noData": "No data available",
+  "@noData": {
+    "description": "No data message"
+  },
+  
+  "siteAnnouncement": "This is a demo site",
+  "@siteAnnouncement": {
+    "description": "Site announcement"
+  },
+  
+  "soldCount": "Sold {count}",
+  "@soldCount": {
+    "description": "Sold count message",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "100"
+      }
+    }
+  },
+  
+  "productDetails": "Product Details",
+  "@productDetails": {
+    "description": "Product details label"
+  },
+  
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings label"
+  },
+  
+  "language": "Language",
+  "@language": {
+    "description": "Language settings label"
+  },
+  
+  "theme": "Theme",
+  "@theme": {
+    "description": "Theme settings label"
+  },
+  
+  "lightTheme": "Light Theme",
+  "@lightTheme": {
+    "description": "Light theme label"
+  },
+  
+  "darkTheme": "Dark Theme",
+  "@darkTheme": {
+    "description": "Dark theme label"
+  },
+  
+  "followSystem": "System Default",
+  "@followSystem": {
+    "description": "System default label"
+  },
+  
+  "about": "About",
+  "@about": {
+    "description": "About label"
+  },
+  
+  "version": "Version: {version}",
+  "@version": {
+    "description": "Version information",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "1.0.0"
+      }
+    }
+  },
+  
+  "privacyPolicy": "Privacy Policy",
+  "@privacyPolicy": {
+    "description": "Privacy policy label"
+  },
+  
+  "termsOfService": "Terms of Service",
+  "@termsOfService": {
+    "description": "Terms of service label"
+  }
+} 

@@ -1,0 +1,1 @@
+{"Rewrite":false,"DenyBrowsers":["qq"],"BrowserLimitation":{"logo":"","name":"禁止内置浏览器访问","status":1,"businessDesc":"当用户用内置浏览器例如QQ，微信，抖音打开网站时，引导用户用浏览器打开","setting":{"denyQQ":true,"denyWechat":false,"denyTiktok":false,"denyBrowser":false,"denyOtherApp":null,"denyShowTitle":"无法访问","tip":"点击右上角菜单,选择用浏览器打开浏览"}}}

@@ -1,0 +1,1154 @@
+basePath: /
+definitions:
+  models.CartAddRequest:
+    properties:
+      product_id:
+        type: integer
+      quantity:
+        minimum: 1
+        type: integer
+    required:
+    - product_id
+    - quantity
+    type: object
+  models.CartUpdateRequest:
+    properties:
+      quantity:
+        minimum: 1
+        type: integer
+    required:
+    - quantity
+    type: object
+  models.Category:
+    properties:
+      created_at:
+        type: string
+      icon:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      sort_order:
+        type: integer
+      status:
+        description: 0=禁用,1=启用
+        type: integer
+      updated_at:
+        type: string
+    type: object
+  models.LoginRequest:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    required:
+    - password
+    - username
+    type: object
+  models.OrderCreateRequest:
+    properties:
+      address_id:
+        type: integer
+      products:
+        items:
+          $ref: '#/definitions/models.OrderProductRequest'
+        minItems: 1
+        type: array
+      remark:
+        type: string
+    required:
+    - address_id
+    - products
+    type: object
+  models.OrderProductRequest:
+    properties:
+      product_id:
+        type: integer
+      quantity:
+        minimum: 1
+        type: integer
+      use_gold:
+        type: boolean
+    required:
+    - product_id
+    - quantity
+    type: object
+  models.OrderStatusUpdateRequest:
+    properties:
+      remark:
+        type: string
+      status:
+        type: integer
+    required:
+    - status
+    type: object
+  models.Product:
+    properties:
+      category:
+        $ref: '#/definitions/models.Category'
+      category_id:
+        type: integer
+      created_at:
+        type: string
+      description:
+        type: string
+      detail_images:
+        type: string
+      gold_price:
+        type: integer
+      id:
+        type: integer
+      image_url:
+        type: string
+      name:
+        type: string
+      price:
+        type: number
+      status:
+        description: 0=下架,1=上架
+        type: integer
+      stock:
+        type: integer
+      updated_at:
+        type: string
+    type: object
+  models.Response:
+    properties:
+      data: {}
+      errors: {}
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  models.ThirdPartySite:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      is_alive:
+        description: 0=不可用,1=可用
+        type: integer
+      last_check:
+        type: string
+      name:
+        type: string
+      priority:
+        type: integer
+      status:
+        description: 0=禁用,1=启用
+        type: integer
+      updated_at:
+        type: string
+      url:
+        type: string
+    type: object
+  models.User:
+    properties:
+      avatar:
+        type: string
+      created_at:
+        type: string
+      email:
+        type: string
+      id:
+        type: integer
+      is_admin:
+        description: 0=普通用户,1=管理员
+        type: integer
+      mobile:
+        type: string
+      nickname:
+        type: string
+      status:
+        description: 0=禁用,1=正常
+        type: integer
+      updated_at:
+        type: string
+      username:
+        type: string
+    type: object
+  models.UserAddress:
+    properties:
+      address:
+        type: string
+      city:
+        type: string
+      consignee:
+        type: string
+      created_at:
+        type: string
+      district:
+        type: string
+      id:
+        type: integer
+      is_default:
+        description: 0=非默认,1=默认
+        type: integer
+      mobile:
+        type: string
+      province:
+        type: string
+      updated_at:
+        type: string
+      user_id:
+        type: integer
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: support@example.com
+    name: API Support
+    url: http://www.example.com/support
+  description: 爱影视频APP商城系统和第三方站点管理API
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: 爱影视频商城API
+  version: "1.0"
+paths:
+  /api/v1/shop/addresses:
+    get:
+      consumes:
+      - application/json
+      description: 获取当前用户的地址列表
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 获取地址列表
+      tags:
+      - 地址
+    post:
+      consumes:
+      - application/json
+      description: 创建新地址
+      parameters:
+      - description: 地址信息
+        in: body
+        name: address
+        required: true
+        schema:
+          $ref: '#/definitions/models.UserAddress'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 创建地址
+      tags:
+      - 地址
+  /api/v1/shop/addresses/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: 删除地址
+      parameters:
+      - description: 地址ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 删除地址
+      tags:
+      - 地址
+    get:
+      consumes:
+      - application/json
+      description: 根据ID获取地址详情
+      parameters:
+      - description: 地址ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 获取地址详情
+      tags:
+      - 地址
+    put:
+      consumes:
+      - application/json
+      description: 更新地址信息
+      parameters:
+      - description: 地址ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: 地址信息
+        in: body
+        name: address
+        required: true
+        schema:
+          $ref: '#/definitions/models.UserAddress'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 更新地址
+      tags:
+      - 地址
+  /api/v1/shop/cart:
+    get:
+      consumes:
+      - application/json
+      description: 获取当前用户的购物车
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 获取购物车
+      tags:
+      - 购物车
+    post:
+      consumes:
+      - application/json
+      description: 添加商品到购物车
+      parameters:
+      - description: 商品信息
+        in: body
+        name: cart
+        required: true
+        schema:
+          $ref: '#/definitions/models.CartAddRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 添加商品到购物车
+      tags:
+      - 购物车
+  /api/v1/shop/cart/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: 从购物车中移除商品
+      parameters:
+      - description: 购物车项ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 从购物车移除商品
+      tags:
+      - 购物车
+    put:
+      consumes:
+      - application/json
+      description: 更新购物车中商品的数量
+      parameters:
+      - description: 购物车项ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: 更新信息
+        in: body
+        name: cart
+        required: true
+        schema:
+          $ref: '#/definitions/models.CartUpdateRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 更新购物车商品数量
+      tags:
+      - 购物车
+  /api/v1/shop/cart/clear:
+    delete:
+      consumes:
+      - application/json
+      description: 清空当前用户的购物车
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 清空购物车
+      tags:
+      - 购物车
+  /api/v1/shop/categories:
+    get:
+      consumes:
+      - application/json
+      description: 获取分类列表，支持分页
+      parameters:
+      - description: 页码，默认1
+        in: query
+        name: page
+        type: integer
+      - description: 每页记录数，默认20
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 获取分类列表
+      tags:
+      - 分类
+    post:
+      consumes:
+      - application/json
+      description: 创建新分类
+      parameters:
+      - description: 分类信息
+        in: body
+        name: category
+        required: true
+        schema:
+          $ref: '#/definitions/models.Category'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 创建分类
+      tags:
+      - 分类
+  /api/v1/shop/categories/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: 删除分类
+      parameters:
+      - description: 分类ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 删除分类
+      tags:
+      - 分类
+    get:
+      consumes:
+      - application/json
+      description: 根据ID获取分类详情
+      parameters:
+      - description: 分类ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 获取分类详情
+      tags:
+      - 分类
+    put:
+      consumes:
+      - application/json
+      description: 更新分类信息
+      parameters:
+      - description: 分类ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: 分类信息
+        in: body
+        name: category
+        required: true
+        schema:
+          $ref: '#/definitions/models.Category'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 更新分类
+      tags:
+      - 分类
+  /api/v1/shop/categories/{id}/products:
+    get:
+      consumes:
+      - application/json
+      description: 获取指定分类下的商品列表
+      parameters:
+      - description: 分类ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: 页码，默认1
+        in: query
+        name: page
+        type: integer
+      - description: 每页记录数，默认20
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 获取分类下的商品
+      tags:
+      - 分类
+  /api/v1/shop/categories/all:
+    get:
+      consumes:
+      - application/json
+      description: 获取所有分类，不分页
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 获取所有分类
+      tags:
+      - 分类
+  /api/v1/shop/orders:
+    get:
+      consumes:
+      - application/json
+      description: 获取当前用户的订单列表
+      parameters:
+      - description: 页码，默认1
+        in: query
+        name: page
+        type: integer
+      - description: 每页记录数，默认20
+        in: query
+        name: limit
+        type: integer
+      - description: 状态，默认全部
+        in: query
+        name: status
+        type: integer
+      - description: 开始日期，格式：YYYY-MM-DD
+        in: query
+        name: start_date
+        type: string
+      - description: 结束日期，格式：YYYY-MM-DD
+        in: query
+        name: end_date
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 获取订单列表
+      tags:
+      - 订单
+    post:
+      consumes:
+      - application/json
+      description: 创建新订单
+      parameters:
+      - description: 订单信息
+        in: body
+        name: order
+        required: true
+        schema:
+          $ref: '#/definitions/models.OrderCreateRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 创建订单
+      tags:
+      - 订单
+  /api/v1/shop/orders/{id}:
+    get:
+      consumes:
+      - application/json
+      description: 根据ID获取订单详情
+      parameters:
+      - description: 订单ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 获取订单详情
+      tags:
+      - 订单
+  /api/v1/shop/orders/{id}/status:
+    put:
+      consumes:
+      - application/json
+      description: 更新订单状态
+      parameters:
+      - description: 订单ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: 状态信息
+        in: body
+        name: status
+        required: true
+        schema:
+          $ref: '#/definitions/models.OrderStatusUpdateRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 更新订单状态
+      tags:
+      - 订单
+  /api/v1/shop/orders/pay/{id}:
+    post:
+      consumes:
+      - application/json
+      description: 支付订单
+      parameters:
+      - description: 订单ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: 支付信息
+        in: body
+        name: payment
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 支付订单
+      tags:
+      - 订单
+  /api/v1/shop/products:
+    get:
+      consumes:
+      - application/json
+      description: 获取商品列表，支持分页、分类筛选、关键字搜索和排序
+      parameters:
+      - description: 页码，默认1
+        in: query
+        name: page
+        type: integer
+      - description: 每页记录数，默认20
+        in: query
+        name: limit
+        type: integer
+      - description: 分类ID
+        in: query
+        name: category_id
+        type: integer
+      - description: 搜索关键字
+        in: query
+        name: keyword
+        type: string
+      - description: 排序方式，可选值：price_asc, price_desc
+        in: query
+        name: sort
+        type: string
+      - description: 状态，0=下架,1=上架，默认全部
+        in: query
+        name: status
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 获取商品列表
+      tags:
+      - 商品
+    post:
+      consumes:
+      - application/json
+      description: 创建新商品
+      parameters:
+      - description: 商品信息
+        in: body
+        name: product
+        required: true
+        schema:
+          $ref: '#/definitions/models.Product'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 创建商品
+      tags:
+      - 商品
+  /api/v1/shop/products/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: 删除商品
+      parameters:
+      - description: 商品ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 删除商品
+      tags:
+      - 商品
+    get:
+      consumes:
+      - application/json
+      description: 根据ID获取商品详情
+      parameters:
+      - description: 商品ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 获取商品详情
+      tags:
+      - 商品
+    put:
+      consumes:
+      - application/json
+      description: 更新商品信息
+      parameters:
+      - description: 商品ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: 商品信息
+        in: body
+        name: product
+        required: true
+        schema:
+          $ref: '#/definitions/models.Product'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 更新商品
+      tags:
+      - 商品
+  /api/v1/sites:
+    get:
+      consumes:
+      - application/json
+      description: 获取站点列表，支持分页
+      parameters:
+      - description: 页码，默认1
+        in: query
+        name: page
+        type: integer
+      - description: 每页记录数，默认20
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 获取站点列表
+      tags:
+      - 第三方站点
+    post:
+      consumes:
+      - application/json
+      description: 创建新站点
+      parameters:
+      - description: 站点信息
+        in: body
+        name: site
+        required: true
+        schema:
+          $ref: '#/definitions/models.ThirdPartySite'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 创建站点
+      tags:
+      - 第三方站点
+  /api/v1/sites/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: 删除站点
+      parameters:
+      - description: 站点ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 删除站点
+      tags:
+      - 第三方站点
+    get:
+      consumes:
+      - application/json
+      description: 根据ID获取站点详情
+      parameters:
+      - description: 站点ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 获取站点详情
+      tags:
+      - 第三方站点
+    put:
+      consumes:
+      - application/json
+      description: 更新站点信息
+      parameters:
+      - description: 站点ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: 站点信息
+        in: body
+        name: site
+        required: true
+        schema:
+          $ref: '#/definitions/models.ThirdPartySite'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 更新站点
+      tags:
+      - 第三方站点
+  /api/v1/sites/{id}/check:
+    post:
+      consumes:
+      - application/json
+      description: 检测站点是否可访问
+      parameters:
+      - description: 站点ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 检测站点健康状态
+      tags:
+      - 第三方站点
+  /api/v1/sites/{id}/status:
+    put:
+      consumes:
+      - application/json
+      description: 更新站点启用/禁用状态
+      parameters:
+      - description: 站点ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: 状态信息，例如：{\
+        in: body
+        name: status
+        required: true
+        schema:
+          additionalProperties:
+            type: integer
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 更新站点状态
+      tags:
+      - 第三方站点
+  /api/v1/sites/available:
+    get:
+      consumes:
+      - application/json
+      description: 获取所有可用的站点列表
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 获取可用站点列表
+      tags:
+      - 第三方站点
+  /api/v1/users/login:
+    post:
+      consumes:
+      - application/json
+      description: 用户登录并获取令牌
+      parameters:
+      - description: 登录信息
+        in: body
+        name: login
+        required: true
+        schema:
+          $ref: '#/definitions/models.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 用户登录
+      tags:
+      - 用户
+  /api/v1/users/password:
+    put:
+      consumes:
+      - application/json
+      description: 修改当前用户的密码
+      parameters:
+      - description: 密码信息
+        in: body
+        name: password
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 修改密码
+      tags:
+      - 用户
+  /api/v1/users/profile:
+    get:
+      consumes:
+      - application/json
+      description: 获取当前用户的资料
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 获取用户资料
+      tags:
+      - 用户
+    put:
+      consumes:
+      - application/json
+      description: 更新当前用户的资料
+      parameters:
+      - description: 用户资料
+        in: body
+        name: profile
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 更新用户资料
+      tags:
+      - 用户
+  /api/v1/users/register:
+    post:
+      consumes:
+      - application/json
+      description: 注册新用户
+      parameters:
+      - description: 注册信息
+        in: body
+        name: register
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: 用户注册
+      tags:
+      - 用户
+schemes:
+- http
+- https
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

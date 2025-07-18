@@ -1,0 +1,88 @@
+include: package:flutter_lints/recommended.yaml
+
+# 自定义分析器规则配置
+analyzer:
+  # 错误级别定义
+  errors:
+    # 必须的参数缺失时报错
+    missing_required_param: error
+    # 必须返回值但没有返回值的函数
+    missing_return: error
+    # 未使用的元素报警告
+    unused_element: warning
+    # 未使用的变量报警告
+    unused_local_variable: warning
+    # 未使用的导入报警告
+    unused_import: warning
+    # 未使用的字段报警告
+    unused_field: warning
+    # 使用废弃API报警告
+    deprecated_member_use: warning
+    # 空安全相关警告
+    unsafe_html: warning
+    # 避免使用print
+    avoid_print: warning
+
+  # 排除生成的文件
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/generated_plugin_registrant.dart"
+    - "lib/generated/**"
+
+# Lint规则配置
+linter:
+  rules:
+    # 强制要求的规则
+    always_declare_return_types: true
+    avoid_empty_else: true
+    avoid_relative_lib_imports: true
+    avoid_returning_null_for_future: true
+    avoid_slow_async_io: true
+    avoid_types_as_parameter_names: true
+    cancel_subscriptions: true
+    close_sinks: true
+    control_flow_in_finally: true
+    empty_statements: true
+    hash_and_equals: true
+    iterable_contains_unrelated_type: true
+    no_duplicate_case_values: true
+    prefer_void_to_null: true
+    throw_in_finally: true
+    unnecessary_statements: true
+    unrelated_type_equality_checks: true
+    valid_regexps: true
+    
+    # 代码风格规则
+    camel_case_types: true
+    library_names: true
+    file_names: true
+    library_prefixes: true
+    non_constant_identifier_names: true
+    constant_identifier_names: true
+    directives_ordering: true
+    lines_longer_than_80_chars: false
+    curly_braces_in_flow_control_structures: true
+    
+    # 文档规则
+    package_api_docs: false
+    public_member_api_docs: false
+    
+    # 性能规则
+    avoid_function_literals_in_foreach_calls: false
+    avoid_unnecessary_containers: true
+    prefer_const_constructors: true
+    prefer_const_declarations: true
+    prefer_const_literals_to_create_immutables: true
+    
+    # 安全规则
+    avoid_web_libraries_in_flutter: true
+    
+    # 额外推荐规则
+    prefer_single_quotes: true
+    await_only_futures: true
+    use_key_in_widget_constructors: true
+    prefer_is_empty: true
+    prefer_is_not_empty: true
+    sized_box_for_whitespace: true
+    use_full_hex_values_for_flutter_colors: true 

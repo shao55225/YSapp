@@ -1,0 +1,373 @@
+{
+  "@@locale": "zh",
+  
+  "appTitle": "爱影视频",
+  "@appTitle": {
+    "description": "应用标题"
+  },
+  
+  "homeTab": "首页",
+  "@homeTab": {
+    "description": "底部导航栏首页标签"
+  },
+  
+  "videoTab": "影视",
+  "@videoTab": {
+    "description": "底部导航栏影视标签"
+  },
+  
+  "shopTab": "商城",
+  "@shopTab": {
+    "description": "底部导航栏商城标签"
+  },
+  
+  "profileTab": "我的",
+  "@profileTab": {
+    "description": "底部导航栏我的标签"
+  },
+  
+  "searchHint": "搜索您想要观看的影片",
+  "@searchHint": {
+    "description": "搜索框提示文本"
+  },
+  
+  "login": "登录",
+  "@login": {
+    "description": "登录按钮文本"
+  },
+  
+  "register": "注册",
+  "@register": {
+    "description": "注册按钮文本"
+  },
+  
+  "username": "用户名",
+  "@username": {
+    "description": "用户名输入框标签"
+  },
+  
+  "password": "密码",
+  "@password": {
+    "description": "密码输入框标签"
+  },
+  
+  "confirmPassword": "确认密码",
+  "@confirmPassword": {
+    "description": "确认密码输入框标签"
+  },
+  
+  "forgotPassword": "忘记密码",
+  "@forgotPassword": {
+    "description": "忘记密码链接文本"
+  },
+  
+  "loginSuccess": "登录成功",
+  "@loginSuccess": {
+    "description": "登录成功提示"
+  },
+  
+  "loginFailed": "登录失败",
+  "@loginFailed": {
+    "description": "登录失败提示"
+  },
+  
+  "registerSuccess": "注册成功",
+  "@registerSuccess": {
+    "description": "注册成功提示"
+  },
+  
+  "registerFailed": "注册失败",
+  "@registerFailed": {
+    "description": "注册失败提示"
+  },
+  
+  "logout": "退出登录",
+  "@logout": {
+    "description": "退出登录按钮文本"
+  },
+  
+  "logoutConfirm": "确定要退出登录吗？",
+  "@logoutConfirm": {
+    "description": "退出登录确认提示"
+  },
+  
+  "cancel": "取消",
+  "@cancel": {
+    "description": "取消按钮文本"
+  },
+  
+  "confirm": "确定",
+  "@confirm": {
+    "description": "确定按钮文本"
+  },
+  
+  "vipMember": "VIP会员",
+  "@vipMember": {
+    "description": "VIP会员标签"
+  },
+  
+  "openVip": "开通会员",
+  "@openVip": {
+    "description": "开通会员按钮文本"
+  },
+  
+  "vipExpired": "会员已过期",
+  "@vipExpired": {
+    "description": "会员已过期提示"
+  },
+  
+  "vipExpireOn": "到期时间：{date}",
+  "@vipExpireOn": {
+    "description": "会员到期时间提示",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "2023-12-31"
+      }
+    }
+  },
+  
+  "goldCoin": "金币",
+  "@goldCoin": {
+    "description": "金币标签"
+  },
+  
+  "goldBalance": "金币余额：{amount}",
+  "@goldBalance": {
+    "description": "金币余额提示",
+    "placeholders": {
+      "amount": {
+        "type": "int",
+        "example": "100"
+      }
+    }
+  },
+  
+  "buyGold": "购买金币",
+  "@buyGold": {
+    "description": "购买金币按钮文本"
+  },
+  
+  "taskCenter": "任务中心",
+  "@taskCenter": {
+    "description": "任务中心标签"
+  },
+  
+  "exchangeCenter": "兑换中心",
+  "@exchangeCenter": {
+    "description": "兑换中心标签"
+  },
+  
+  "transactionDetails": "交易明细",
+  "@transactionDetails": {
+    "description": "交易明细标签"
+  },
+  
+  "viewingHistory": "观看记录",
+  "@viewingHistory": {
+    "description": "观看记录标签"
+  },
+  
+  "noViewingHistory": "暂无观看记录",
+  "@noViewingHistory": {
+    "description": "暂无观看记录提示"
+  },
+  
+  "more": "更多",
+  "@more": {
+    "description": "更多按钮文本"
+  },
+  
+  "promotionUser": "推广新用户",
+  "@promotionUser": {
+    "description": "推广新用户标签"
+  },
+  
+  "registerSuccessful": "注册成功",
+  "@registerSuccessful": {
+    "description": "注册成功标签"
+  },
+  
+  "enjoyVipExperience": "享超多会员体验",
+  "@enjoyVipExperience": {
+    "description": "享超多会员体验标签"
+  },
+  
+  "addToCart": "加入购物车",
+  "@addToCart": {
+    "description": "加入购物车按钮文本"
+  },
+  
+  "buyNow": "立即购买",
+  "@buyNow": {
+    "description": "立即购买按钮文本"
+  },
+  
+  "addedToCart": "已添加到购物车",
+  "@addedToCart": {
+    "description": "已添加到购物车提示"
+  },
+  
+  "checkout": "结算",
+  "@checkout": {
+    "description": "结算按钮文本"
+  },
+  
+  "totalAmount": "总计: ¥{amount}",
+  "@totalAmount": {
+    "description": "总计金额提示",
+    "placeholders": {
+      "amount": {
+        "type": "String",
+        "example": "99.00"
+      }
+    }
+  },
+  
+  "pay": "支付",
+  "@pay": {
+    "description": "支付按钮文本"
+  },
+  
+  "paymentMethod": "支付方式",
+  "@paymentMethod": {
+    "description": "支付方式标签"
+  },
+  
+  "wechatPay": "微信支付",
+  "@wechatPay": {
+    "description": "微信支付标签"
+  },
+  
+  "aliPay": "支付宝",
+  "@aliPay": {
+    "description": "支付宝标签"
+  },
+  
+  "applePay": "Apple Pay",
+  "@applePay": {
+    "description": "Apple Pay标签"
+  },
+  
+  "googlePay": "Google Pay",
+  "@googlePay": {
+    "description": "Google Pay标签"
+  },
+  
+  "orderSuccess": "下单成功",
+  "@orderSuccess": {
+    "description": "下单成功提示"
+  },
+  
+  "orderFailed": "下单失败",
+  "@orderFailed": {
+    "description": "下单失败提示"
+  },
+  
+  "paySuccess": "支付成功",
+  "@paySuccess": {
+    "description": "支付成功提示"
+  },
+  
+  "payFailed": "支付失败",
+  "@payFailed": {
+    "description": "支付失败提示"
+  },
+  
+  "networkError": "网络错误，请检查网络连接",
+  "@networkError": {
+    "description": "网络错误提示"
+  },
+  
+  "retry": "重试",
+  "@retry": {
+    "description": "重试按钮文本"
+  },
+  
+  "loading": "加载中...",
+  "@loading": {
+    "description": "加载中提示"
+  },
+  
+  "noData": "暂无数据",
+  "@noData": {
+    "description": "暂无数据提示"
+  },
+  
+  "siteAnnouncement": "本站为演示站点",
+  "@siteAnnouncement": {
+    "description": "站点公告"
+  },
+  
+  "soldCount": "已售{count}件",
+  "@soldCount": {
+    "description": "已售数量提示",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "100"
+      }
+    }
+  },
+  
+  "productDetails": "商品详情",
+  "@productDetails": {
+    "description": "商品详情标签"
+  },
+  
+  "settings": "设置",
+  "@settings": {
+    "description": "设置标签"
+  },
+  
+  "language": "语言",
+  "@language": {
+    "description": "语言设置标签"
+  },
+  
+  "theme": "主题",
+  "@theme": {
+    "description": "主题设置标签"
+  },
+  
+  "lightTheme": "浅色主题",
+  "@lightTheme": {
+    "description": "浅色主题标签"
+  },
+  
+  "darkTheme": "深色主题",
+  "@darkTheme": {
+    "description": "深色主题标签"
+  },
+  
+  "followSystem": "跟随系统",
+  "@followSystem": {
+    "description": "跟随系统标签"
+  },
+  
+  "about": "关于",
+  "@about": {
+    "description": "关于标签"
+  },
+  
+  "version": "版本：{version}",
+  "@version": {
+    "description": "版本信息",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "1.0.0"
+      }
+    }
+  },
+  
+  "privacyPolicy": "隐私政策",
+  "@privacyPolicy": {
+    "description": "隐私政策标签"
+  },
+  
+  "termsOfService": "服务条款",
+  "@termsOfService": {
+    "description": "服务条款标签"
+  }
+} 

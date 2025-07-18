@@ -1,0 +1,12 @@
+// 替换原文件中的apiBaseUrl定义
+  // API基础URL
+  final String apiBaseUrl;
+  
+  // 构造函数
+  AppConfig({
+    this.appName = '爱影视频',
+    this.apiBaseUrl = 'http://heigeweiwu.cn',
+    this.isDevMode = false,
+    this.cdnBaseUrl = 'https://cdn.example.com',
+    String appVersion = '1.0.0',
+  }) : _appVersion = appVersion;
